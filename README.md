@@ -21,4 +21,9 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+## Terminal Commands
+
+### 4. Article Model
+
+* `rails g model article title content:text slug`
+* `rails db:migrate`
