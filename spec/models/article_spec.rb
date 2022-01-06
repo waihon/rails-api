@@ -1,16 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  it "tests that factory is valid" do
-    article = build(:article)
+  describe "#validations" do
+    it "tests that factory is valid" do
+      article = build(:article)
 
-    expect(article).to be_valid
-  end
+      expect(article).to be_valid
+    end
 
-  it "has an invalid title" do
-    article = build(:article, title: "")
+    it "has an invalid title" do
+      article = build(:article, title: "")
 
-    expect(article).not_to be_valid
-    expect(article.errors[:title]).to include("can't be blank")
+      expect(article).not_to be_valid
+      expect(article.errors[:title]).to include("can't be blank")
+    end
   end
 end
