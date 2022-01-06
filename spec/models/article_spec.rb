@@ -29,6 +29,12 @@ RSpec.describe Article, type: :model do
       expect(article.errors[:slug]).to include("can't be blank")
     end
 
-    pending "validates the uniqueness of the slug"
+    it "validates the uniqueness of the slug" do
+      article.save
+      article2 = build(:article)
+
+      expect(article2).not_to be_valid
+      expect(article2.errors[:slug]).to include("has already been taken")
+    end
   end
 end
