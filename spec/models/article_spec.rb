@@ -22,7 +22,12 @@ RSpec.describe Article, type: :model do
       expect(article.errors[:content]).to include("can't be blank")
     end
 
-    pending "has an invalid slug"
+    it "has an invalid slug" do
+      article.slug = ""
+
+      expect(article).not_to be_valid
+      expect(article.errors[:slug]).to include("can't be blank")
+    end
 
     pending "validates the uniqueness of the slug"
   end
