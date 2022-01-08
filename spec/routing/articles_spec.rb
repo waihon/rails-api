@@ -10,8 +10,6 @@ RSpec.describe 'articles routes' do
   end
 
   it "routes to articles#show" do
-    aggregate_failures do
-      expect(get "articles/1").to route_to("articles#show", id: "1" )
-    end
+    expect(get "articles/1").to route_to("articles#show", id: "1" )
   end
 end
