@@ -31,3 +31,7 @@ Things you may want to cover:
 ### 11. Articles List Routing
 
 * `rails routes -g articles`
+
+### 16. Article Serialization
+
+* `rails g serializer Article title content slug`
