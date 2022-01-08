@@ -27,3 +27,7 @@ Things you may want to cover:
 
 * `rails g model article title content:text slug`
 * `rails db:migrate`
+
+### 11. Articles List Routing
+
+* `rails routes -g articles`
