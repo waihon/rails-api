@@ -15,7 +15,7 @@ RSpec.describe ArticlesController do
       expect(body).to eq(
         data: [
           {
-            id: article.id,
+            id: article.id.to_s,
             type: "articles",
             attributes: {
               title: article.title,
