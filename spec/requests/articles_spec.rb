@@ -47,7 +47,7 @@ RSpec.describe ArticlesController do
       get "/articles", params: { page: { number: 2, size: 1 } }
       expect(json[:links].length).to eq(5)
       expect(json[:links].keys).to contain_exactly(
-        "first", "prev", "next", "last", "self"
+        :first, :prev, :next, :last, :self
       )
     end
   end
