@@ -35,3 +35,8 @@ Things you may want to cover:
 ### 16. Article Serialization
 
 * `rails g serializer Article title content slug`
+
+### 23. Create User Model
+
+* `rails g model user login name url avatar_url provider`
+* `rails db:migrate`
