@@ -40,3 +40,12 @@ Things you may want to cover:
 
 * `rails g model user login name url avatar_url provider`
 * `rails db:migrate`
+
+### 24. Octokit Integration
+
+#### Terminal
+* `GITHUB_TOKEN='githubpersonalaccesstoken' rails c`
+
+#### Rails Console
+* `client = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])`
+* `client.user`
