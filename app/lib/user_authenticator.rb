@@ -16,7 +16,11 @@ class UserAuthenticator
     if token.try(:error).present?
       raise AuthenticationError
     else
-      # user registration
+      user_client = Octokit::Client.new(
+        access_token: token)
+      user_data = user_client.user.to_h.
+        slice(:login, :avatar_url, :url, :name)
+      User.create(user_data.merge(provider: "github"))
     end
   end
 
