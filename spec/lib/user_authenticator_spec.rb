@@ -7,6 +7,15 @@ describe UserAuthenticator do
     subject { authenticator.perform }
 
     context "when code is incorrect" do
+      let(:error) {
+        double("Sawyer::Resource", error: "bad_verification_code")
+      }
+
+      before do
+        allow_any_instance_of(Octokit::Client).to receive(
+          :exchange_code_for_token).and_return(error)
+      end
+
       it "should raise an error" do
         aggregate_failures do
           expect { subject }.to raise_error(
